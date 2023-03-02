@@ -1,5 +1,7 @@
 import puppeteer, { PuppeteerLaunchOptions } from "puppeteer";
 
+const EMAIL = "";
+
 (async () => {
   const page = await launch();
 
@@ -10,7 +12,7 @@ import puppeteer, { PuppeteerLaunchOptions } from "puppeteer";
   ]);
 
   // google auth
-  await page.type("#identifierId", "awwwwwww4@gmail.com");
+  await page.type("#identifierId", EMAIL);
   const [element] = await page.$x("//span[contains(text(), '次へ')]");
   await element.focus();
   await page.keyboard.press('Enter');
